@@ -203,14 +203,15 @@
            ====================================== */
         header { background: var(--navy); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 20px rgba(0,0,0,0.15); }
         .nav-wrapper { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1200px; margin: 0 auto; height: 72px; }
-        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
         .logo-icon { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
         .logo-text { color: white; font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
         .logo-text small { display: block; font-family: var(--font-body); font-size: 0.7rem; font-weight: 400; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 2px; }
-        nav { display: flex; align-items: center; gap: 4px; }
-        nav a { color: rgba(255,255,255,0.75); font-size: 0.92rem; font-weight: 500; padding: 8px 14px; border-radius: var(--radius); transition: all var(--transition); }
+        nav { display: flex; align-items: center; gap: 2px; flex-shrink: 0; }
+        nav a { color: rgba(255,255,255,0.75); font-size: 0.875rem; font-weight: 500; padding: 7px 11px; border-radius: var(--radius); transition: all var(--transition); white-space: nowrap; }
         nav a:hover { color: white; background: rgba(255,255,255,0.08); }
-        .nav-cta { background: var(--gold) !important; color: var(--navy-deep) !important; font-weight: 600 !important; padding: 10px 22px !important; }
+        .nav-actions { display: flex; align-items: center; gap: 6px; margin-left: 6px; padding-left: 10px; border-left: 1px solid rgba(255,255,255,0.12); flex-shrink: 0; }
+        .nav-cta { background: var(--gold) !important; color: var(--navy-deep) !important; font-weight: 600 !important; padding: 6px 12px !important; font-size: 0.8125rem !important; }
         .nav-cta:hover { background: var(--gold-light) !important; box-shadow: var(--shadow-gold); }
         .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
         .mobile-toggle span { display: block; width: 24px; height: 2px; background: white; margin: 6px 0; transition: var(--transition); border-radius: 2px; }
@@ -395,7 +396,8 @@
             .top-bar { display: none; }
             nav { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--navy); padding: 20px; flex-direction: column; border-top: 1px solid rgba(255,255,255,0.1); box-shadow: var(--shadow-lg); }
             nav.active { display: flex; }
-            nav a { padding: 12px 16px; width: 100%; }
+            nav a { padding: 12px 16px; width: 100%; white-space: normal; }
+            .nav-actions { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); margin-left: 0; padding-left: 0; padding-top: 12px; margin-top: 4px; flex-direction: column; width: 100%; gap: 8px; }
             .mobile-toggle { display: block; }
             .hero-stats { gap: 24px; }
             .about-highlights { grid-template-columns: 1fr; }
@@ -451,8 +453,10 @@
                 <a href="#faq">FAQ</a>
                 <a href="https://conotarypublic.com" target="_blank" rel="noopener noreferrer">Notary Site</a>
                 <a href="/resources/">Resources</a>
-                <a href="https://drive.google.com/drive/folders/1QaOOkfVWZfFqw2sWiXzUUtFHWuH1aDtl?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-cta">FREE RESOURCES</a>
-                <a href="https://bookme.name/AimeeSkillin/lite/bbd" target="_blank" rel="noopener noreferrer" class="nav-cta">Free Masterclass</a>
+                <div class="nav-actions">
+                    <a href="https://drive.google.com/drive/folders/1QaOOkfVWZfFqw2sWiXzUUtFHWuH1aDtl?usp=sharing" target="_blank" rel="noopener noreferrer" class="nav-cta">Free Resources</a>
+                    <a href="https://bookme.name/AimeeSkillin/lite/bbd" target="_blank" rel="noopener noreferrer" class="nav-cta">Join Free</a>
+                </div>
             </nav>
         </div>
     </header>
